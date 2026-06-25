@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FreePath株式会社 - 車いすのあなたへ、自由な仕事を</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --g:#006E5F;--g2:#00A387;--gp:#E8F5F2;--gd:#004D44;
+  --a:#F5A623;--ad:#D48B1A;
+  --dk:#1A2523;--tx:#2C3E38;--tl:#5A6B65;
+  --sf:#F5F9F8;--wh:#fff;--br:#D5E5E2;--rd:#E53935
+}
+body{font-family:'Noto Sans JP',sans-serif;color:var(--tx);background:var(--wh);line-height:1.7;font-size:16px}
+a{text-decoration:none;color:inherit}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,0.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--br);height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;transition:box-shadow .3s}
+.n-logo{display:flex;align-items:center;gap:10px}
+.n-mark{width:36px;height:36px;background:var(--g);border-radius:8px;display:grid;place-items:center;color:#fff;font-weight:900;font-size:1rem;letter-spacing:-1px;flex-shrink:0}
+.n-txt{font-weight:900;font-size:1.05rem;color:var(--dk)}
+.n-txt em{font-style:normal;color:var(--g)}
+.n-links{display:flex;gap:2rem;list-style:none}
+.n-links a{font-size:0.85rem;font-weight:500;color:var(--tl);transition:color .2s}
+.n-links a:hover{color:var(--g)}
+.n-cta{display:flex;gap:10px;align-items:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:0.6rem 1.25rem;border-radius:8px;font-size:0.875rem;font-weight:700;cursor:pointer;border:none;font-family:inherit;transition:all .2s}
+.btn-g{background:var(--g);color:#fff}
+.btn-g:hover{background:var(--g2);transform:translateY(-1px)}
+.btn-go{background:transparent;color:var(--g);border:1.5px solid var(--g)}
+.btn-go:hover{background:var(--gp)}
+.btn-a{background:var(--a);color:#fff}
+.btn-a:hover{background:var(--ad);transform:translateY(-1px)}
+.btn-lg{padding:0.9rem 2rem;font-size:1rem;border-radius:10px}
+.btn-w{border:1.5px solid rgba(255,255,255,.5);color:#fff;background:transparent}
+.btn-w:hover{background:rgba(255,255,255,.1)}
+.ctr{max-width:1200px;margin:0 auto}
+
+/* HERO */
+.hero{min-height:100vh;background:#004D44;position:relative;overflow:hidden;display:flex;align-items:center;padding:8rem 2rem 4rem}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(140deg,#0A1F1C 0%,#006E5F 55%,#00877A 100%)}
+.hero-path{position:absolute;right:-40px;top:0;bottom:0;width:55%;pointer-events:none}
+.h-ctr{position:relative;max-width:1200px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.h-txt{color:#fff}
+.h-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(245,166,35,.18);border:1px solid rgba(245,166,35,.4);color:var(--a);padding:.375rem 1rem;border-radius:100px;font-size:.78rem;font-weight:700;margin-bottom:1.5rem;letter-spacing:.05em}
+.h-head{font-size:clamp(2rem,4vw,3.5rem);font-weight:900;line-height:1.2;margin-bottom:1.5rem;letter-spacing:-.02em}
+.h-head .ac{color:var(--a)}
+.h-sub{font-size:1rem;color:rgba(255,255,255,.8);margin-bottom:2.5rem;line-height:1.9}
+.h-acts{display:flex;gap:1rem;flex-wrap:wrap}
+.h-vis{display:flex;flex-direction:column;gap:1rem}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+.st-card{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:14px;padding:1.25rem;text-align:center;color:#fff}
+.st-card .num{font-size:1.8rem;font-weight:900;color:var(--a);display:block}
+.st-card .lab{font-size:.72rem;color:rgba(255,255,255,.65);margin-top:2px}
+.aud-card{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:14px;padding:1.25rem;color:#fff}
+.aud-card h3{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:1rem}
+.aud-row{display:flex;align-items:center;gap:10px;padding:.7rem 0;border-bottom:1px solid rgba(255,255,255,.1)}
+.aud-row:last-child{border-bottom:none}
+.aud-ic{width:36px;height:36px;border-radius:8px;display:grid;place-items:center;font-size:1.1rem;flex-shrink:0}
+.aud-ic.g{background:rgba(0,163,135,.3)}
+.aud-ic.a{background:rgba(245,166,35,.3)}
+.aud-txt .t{font-weight:700;font-size:.85rem}
+.aud-txt .d{font-size:.72rem;color:rgba(255,255,255,.6)}
+.aud-row .ar{color:rgba(255,255,255,.35);font-size:1.1rem;margin-left:auto}
+
+/* SECTIONS */
+section{padding:5.5rem 2rem}
+.s-eye{display:inline-block;color:var(--g);font-size:.75rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin-bottom:.75rem}
+.s-title{font-size:clamp(1.75rem,3vw,2.4rem);font-weight:900;line-height:1.25;color:var(--dk);letter-spacing:-.02em;margin-bottom:1rem}
+.s-desc{color:var(--tl);font-size:.95rem;max-width:580px;margin:0 auto;line-height:1.9}
+.s-hdr{text-align:center;margin-bottom:3.5rem}
+
+/* ABOUT */
+.about{background:var(--sf)}
+.ab-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.ab-txt h2{font-size:1.75rem;font-weight:900;color:var(--dk);margin-bottom:1.25rem;line-height:1.3}
+.ab-txt p{color:var(--tl);margin-bottom:.875rem;line-height:1.9;font-size:.95rem}
+.feat-list{display:flex;flex-direction:column;gap:1.1rem;margin-top:1.75rem}
+.feat{display:flex;gap:.875rem;align-items:flex-start}
+.feat-ic{width:40px;height:40px;background:var(--gp);border-radius:10px;display:grid;place-items:center;font-size:1.2rem;flex-shrink:0;color:var(--g)}
+.feat-ic svg{width:20px;height:20px;stroke:var(--g);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.feat-t{font-weight:700;color:var(--dk);margin-bottom:2px;font-size:.9rem}
+.feat-d{font-size:.82rem;color:var(--tl);line-height:1.65}
+.uc-card{background:var(--wh);border-radius:18px;padding:1.75rem;box-shadow:0 4px 24px rgba(0,0,0,.07)}
+.uc-hdr{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--tl);margin-bottom:1.1rem}
+.uc-item{display:flex;gap:.875rem;padding:.9rem;border-radius:10px;border:1.5px solid var(--br);margin-bottom:.65rem;transition:border-color .2s,background .2s;cursor:default}
+.uc-item:hover{border-color:var(--g);background:var(--gp)}
+.uc-em{width:42px;height:42px;background:var(--sf);border-radius:9px;display:grid;place-items:center;font-size:1.3rem;flex-shrink:0}
+.uc-pl{font-weight:700;font-size:.85rem;color:var(--dk)}
+.uc-tk{font-size:.75rem;color:var(--tl);margin-top:2px}
+.uc-py{font-size:.85rem;font-weight:700;color:var(--g);margin-top:4px}
+
+/* PROCESS */
+.proc-tabs{display:flex;justify-content:center;gap:8px;margin-bottom:2.5rem}
+.tab{padding:.575rem 1.5rem;border-radius:100px;border:1.5px solid var(--br);background:var(--wh);cursor:pointer;font-family:inherit;font-size:.85rem;font-weight:700;color:var(--tl);transition:all .2s}
+.tab.on{background:var(--g);border-color:var(--g);color:#fff}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;position:relative}
+.steps::before{content:'';position:absolute;top:38px;left:calc(12.5% - 10px);right:calc(12.5% - 10px);height:2px;background:var(--gp);z-index:0}
+.step{background:var(--wh);border-radius:14px;padding:1.5rem 1.1rem;text-align:center;border:1.5px solid var(--br);position:relative;z-index:1;transition:border-color .2s,box-shadow .2s}
+.step:hover{border-color:var(--g);box-shadow:0 4px 16px rgba(0,110,95,.1)}
+.step-n{width:44px;height:44px;background:var(--g);border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:900;font-size:.95rem;margin:0 auto .875rem}
+.step-ic{font-size:1.6rem;margin-bottom:.6rem}
+.step-t{font-weight:700;color:var(--dk);margin-bottom:.4rem;font-size:.875rem}
+.step-d{font-size:.78rem;color:var(--tl);line-height:1.65}
+
+/* JOB BOARD */
+.jb{background:var(--sf)}
+.jb-filters{display:flex;gap:8px;margin-bottom:1.25rem;flex-wrap:wrap}
+.fchip{padding:.35rem 1rem;border-radius:100px;border:1.5px solid var(--br);background:var(--wh);cursor:pointer;font-family:inherit;font-size:.78rem;font-weight:500;color:var(--tl);transition:all .2s}
+.fchip.on{border-color:var(--g);background:var(--gp);color:var(--g);font-weight:700}
+.jcards{display:flex;flex-direction:column;gap:.875rem}
+.jcard{background:var(--wh);border-radius:12px;border:1.5px solid var(--br);padding:1.375rem;display:grid;grid-template-columns:1fr 170px;gap:1.25rem;transition:border-color .2s,box-shadow .2s}
+.jcard:hover{border-color:var(--g2);box-shadow:0 4px 16px rgba(0,110,95,.1)}
+.j-badges{display:flex;gap:5px;margin-bottom:.65rem}
+.bdg{display:inline-flex;align-items:center;padding:.18rem .5rem;border-radius:4px;font-size:.68rem;font-weight:700;letter-spacing:.02em}
+.bdg-pr{background:#E3F0FF;color:#1565C0;border:1px solid #BBDEFB}
+.bdg-urg{background:#FFEBEE;color:var(--rd);border:1px solid #FFCDD2}
+.bdg-new{background:#E8F5E9;color:#2E7D32;border:1px solid #C8E6C9}
+.j-title{font-size:.975rem;font-weight:700;color:#1565C0;display:block;margin-bottom:.45rem;cursor:pointer;transition:color .2s}
+.j-title:hover{color:#0D47A1;text-decoration:underline}
+.j-cat{display:flex;align-items:center;gap:5px;font-size:.78rem;color:var(--tl);margin-bottom:.65rem}
+.j-desc{font-size:.82rem;color:var(--tl);line-height:1.7;margin-bottom:.875rem}
+.j-foot{display:flex;align-items:center;gap:1.25rem;flex-wrap:wrap}
+.j-user{display:flex;align-items:center;gap:7px;font-size:.78rem;color:var(--tl)}
+.j-av{width:26px;height:26px;border-radius:50%;background:var(--gp);display:grid;place-items:center;font-size:.68rem;color:var(--g);font-weight:700;flex-shrink:0}
+.j-date{font-size:.74rem;color:var(--tl)}
+.j-acts{display:flex;gap:7px;margin-top:.7rem}
+.btn-os{padding:.38rem 1rem;border-radius:6px;border:1.5px solid var(--br);background:var(--wh);cursor:pointer;font-family:inherit;font-size:.76rem;font-weight:700;color:var(--tx);transition:all .2s;display:flex;align-items:center;gap:5px}
+.btn-os:hover{border-color:var(--g);color:var(--g)}
+.btn-ps{padding:.38rem 1.1rem;border-radius:6px;border:none;background:#1565C0;cursor:pointer;font-family:inherit;font-size:.76rem;font-weight:700;color:#fff;transition:background .2s}
+.btn-ps:hover{background:#1976D2}
+.j-right{display:flex;flex-direction:column;align-items:flex-end;gap:.65rem}
+.pay-bdg{background:#E8F5F0;color:var(--g);padding:.22rem .7rem;border-radius:4px;font-size:.72rem;font-weight:700}
+.pay-amt{font-size:1.25rem;font-weight:900;color:var(--rd);text-align:right}
+.pay-amt span{font-size:.78rem;font-weight:600}
+.j-stats{text-align:right}
+.j-stats .ac{font-size:.78rem;color:var(--tl)}
+.j-stats .ac strong{color:var(--dk)}
+.j-stats .ct{font-size:.72rem;color:var(--tl)}
+.j-dl{text-align:right}
+.j-dl .dy{font-size:.78rem;color:var(--tl)}
+.j-dl .dt{font-size:.72rem;color:var(--tl)}
+.more{display:flex;justify-content:center;margin-top:1.75rem}
+
+/* REQUEST */
+.req{background:linear-gradient(135deg,#004D44,#006E5F)}
+.rq-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.rq-txt h2{font-size:2rem;font-weight:900;color:#fff;line-height:1.3;margin-bottom:1rem}
+.rq-txt p{color:rgba(255,255,255,.8);margin-bottom:1.75rem;line-height:1.9;font-size:.95rem}
+.rq-pts{list-style:none;display:flex;flex-direction:column;gap:.65rem;margin-bottom:2rem}
+.rq-pts li{display:flex;align-items:center;gap:.65rem;color:rgba(255,255,255,.9);font-size:.875rem;font-weight:500}
+.rq-pts li::before{content:'✓';display:inline-flex;width:20px;height:20px;background:rgba(245,166,35,.25);border-radius:50%;align-items:center;justify-content:center;font-size:.7rem;font-weight:900;color:var(--a);flex-shrink:0}
+.form-card{background:var(--wh);border-radius:18px;padding:2rem}
+.form-ttl{font-size:1rem;font-weight:900;color:var(--dk);margin-bottom:1.5rem}
+.fg{margin-bottom:.875rem}
+.fl{display:block;font-size:.78rem;font-weight:700;color:var(--tx);margin-bottom:.35rem}
+.fi,.fs{width:100%;padding:.6rem .875rem;border:1.5px solid var(--br);border-radius:8px;font-family:inherit;font-size:.875rem;color:var(--tx);outline:none;transition:border-color .2s;background:var(--wh)}
+.fi:focus,.fs:focus{border-color:var(--g)}
+.fs{appearance:none;-webkit-appearance:none}
+.sub-btn{width:100%;padding:.875rem;background:var(--g);color:#fff;border:none;border-radius:8px;font-family:inherit;font-size:.95rem;font-weight:700;cursor:pointer;transition:background .2s}
+.sub-btn:hover{background:var(--g2)}
+.form-note{font-size:.72rem;color:var(--tl);text-align:center;margin-top:.65rem}
+
+/* RECRUIT */
+.rec-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.rec-lbl{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--tl);margin-bottom:1.5rem}
+.rec-cards{display:flex;flex-direction:column;gap:.75rem}
+.rec-item{background:var(--wh);border:1.5px solid var(--br);border-radius:12px;padding:1.1rem;display:flex;gap:.875rem;transition:border-color .2s}
+.rec-item:hover{border-color:var(--g)}
+.rec-ic{width:42px;height:42px;background:var(--gp);border-radius:10px;display:grid;place-items:center;font-size:1.2rem;flex-shrink:0}
+.rec-t{font-weight:700;color:var(--dk);font-size:.875rem;margin-bottom:2px}
+.rec-d{font-size:.78rem;color:var(--tl);line-height:1.6}
+.cta-box{background:var(--gp);border-radius:18px;padding:2.25rem;position:sticky;top:84px}
+.cta-box h2{font-size:1.6rem;font-weight:900;color:var(--dk);margin-bottom:.875rem;line-height:1.3}
+.cta-box p{color:var(--tl);font-size:.9rem;margin-bottom:1.75rem;line-height:1.85}
+.rec-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin-bottom:1.75rem}
+.rs{text-align:center;background:var(--wh);border-radius:10px;padding:.875rem .5rem}
+.rs .n{font-size:1.4rem;font-weight:900;color:var(--g);display:block}
+.rs .l{font-size:.7rem;color:var(--tl)}
+.cta-btns{display:flex;flex-direction:column;gap:.65rem}
+.cta-note{font-size:.72rem;color:var(--tl);text-align:center;margin-top:.875rem}
+
+/* FOOTER */
+footer{background:var(--dk);color:rgba(255,255,255,.75);padding:3.5rem 2rem 2rem}
+.ft-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2.5rem;max-width:1200px;margin:0 auto;padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.1)}
+.ft-logo{display:flex;align-items:center;gap:10px;color:#fff;margin-bottom:.875rem}
+.ft-lm{width:30px;height:30px;background:var(--g);border-radius:6px;display:grid;place-items:center;color:#fff;font-weight:900;font-size:.85rem;flex-shrink:0}
+.ft-ln{font-weight:900;font-size:.95rem}
+.ft-brand p{font-size:.825rem;color:rgba(255,255,255,.55);line-height:1.8}
+.ft-col h4{font-weight:700;color:#fff;font-size:.85rem;margin-bottom:.875rem}
+.ft-col ul{list-style:none;display:flex;flex-direction:column;gap:.5rem}
+.ft-col ul a{font-size:.82rem;color:rgba(255,255,255,.55);transition:color .2s}
+.ft-col ul a:hover{color:var(--a)}
+.ft-btm{max-width:1200px;margin:0 auto;padding-top:1.75rem;display:flex;justify-content:space-between;font-size:.76rem;color:rgba(255,255,255,.35)}
+
+/* MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:500;display:grid;place-items:center;opacity:0;pointer-events:none;transition:opacity .2s}
+.modal-overlay.open{opacity:1;pointer-events:all}
+.modal{background:var(--wh);border-radius:18px;padding:2rem;max-width:440px;width:calc(100% - 2rem);position:relative}
+.modal-close{position:absolute;top:1rem;right:1rem;background:none;border:none;cursor:pointer;font-size:1.25rem;color:var(--tl);line-height:1}
+.modal-close:hover{color:var(--dk)}
+.modal-t{font-size:1.1rem;font-weight:900;color:var(--dk);margin-bottom:.25rem}
+.modal-sub{font-size:.85rem;color:var(--tl);margin-bottom:1.5rem}
+.modal-body{display:flex;flex-direction:column;gap:1rem}
+
+/* TOAST */
+.toast{position:fixed;bottom:2rem;right:2rem;background:var(--dk);color:#fff;padding:.75rem 1.25rem;border-radius:10px;font-size:.85rem;font-weight:700;z-index:600;transform:translateY(120%);transition:transform .3s;box-shadow:0 4px 20px rgba(0,0,0,.2)}
+.toast.show{transform:translateY(0)}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.animate{opacity:0}
+.animate.in{animation:fadeUp .5s ease forwards}
+
+@media(max-width:900px){
+  .h-ctr,.ab-grid,.rq-grid,.rec-grid,.ft-grid{grid-template-columns:1fr;gap:2rem}
+  .steps{grid-template-columns:1fr 1fr}
+  .steps::before{display:none}
+  .jcard{grid-template-columns:1fr}
+  .j-right{flex-direction:row;align-items:center;min-width:unset;flex-wrap:wrap}
+  .n-links{display:none}
+  .h-vis{display:none}
+  footer{padding:2.5rem 1rem 1.5rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a class="n-logo" href="#">
+    <div class="n-mark">FP</div>
+    <span class="n-txt">Free<em>Path</em>株式会社</span>
+  </a>
+  <ul class="n-links">
+    <li><a href="#about">会社について</a></li>
+    <li><a href="#jobs">仕事を探す</a></li>
+    <li><a href="#request">仕事を依頼</a></li>
+    <li><a href="#recruit">バイト募集</a></li>
+  </ul>
+  <div class="n-cta">
+    <a href="#" class="btn btn-go" onclick="openModal('login')">ログイン</a>
+    <a href="#request" class="btn btn-g">仕事を依頼する</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <svg class="hero-path" viewBox="0 0 600 900" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M580 50 C480 180 360 120 260 320 C160 520 220 660 320 850" stroke="white" stroke-width="72" stroke-linecap="round" opacity="0.06"/>
+    <path d="M680 0 C560 220 440 160 340 360 C240 560 300 700 420 900" stroke="white" stroke-width="36" stroke-linecap="round" opacity="0.04"/>
+    <path d="M480 0 C400 150 300 80 220 260 C140 440 180 580 280 780" stroke="white" stroke-width="18" stroke-linecap="round" opacity="0.06"/>
+    <circle cx="260" cy="320" r="10" fill="white" opacity="0.12"/>
+    <circle cx="320" cy="600" r="7" fill="white" opacity="0.1"/>
+    <circle cx="220" cy="840" r="5" fill="white" opacity="0.08"/>
+  </svg>
+  <div class="h-ctr">
+    <div class="h-txt">
+      <div class="h-pill">♿ バリアフリーモニタリング・プラットフォーム</div>
+      <h1 class="h-head">車いすだから、<br>できる仕事が<br><span class="ac">ある。</span></h1>
+      <p class="h-sub">あなたの視点と体験が、社会を変える力になります。<br>FreePath は、車いすユーザーがバリアフリーモニターとして<br>活躍できる日本初のクラウドソーシングです。</p>
+      <div class="h-acts">
+        <a href="#jobs" class="btn btn-a btn-lg">仕事を探す →</a>
+        <a href="#request" class="btn btn-w btn-lg">企業の方へ</a>
+      </div>
+    </div>
+    <div class="h-vis">
+      <div class="stats">
+        <div class="st-card"><span class="num">1,200+</span><span class="lab">登録モニター数</span></div>
+        <div class="st-card"><span class="num">340+</span><span class="lab">完了案件数</span></div>
+        <div class="st-card"><span class="num">4.8★</span><span class="lab">平均満足度</span></div>
+        <div class="st-card"><span class="num">98%</span><span class="lab">継続率</span></div>
+      </div>
+      <div class="aud-card">
+        <h3>こんな方に使われています</h3>
+        <div class="aud-row">
+          <div class="aud-ic g">🏢</div>
+          <div class="aud-txt"><div class="t">バリアフリーを改善したい企業</div><div class="d">レストラン・施設などに現地調査を依頼</div></div>
+          <span class="ar">›</span>
+        </div>
+        <div class="aud-row">
+          <div class="aud-ic a">♿</div>
+          <div class="aud-txt"><div class="t">バイトを探している車いすユーザー</div><div class="d">自分のペースで、社会貢献しながら収入</div></div>
+          <span class="ar">›</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about animate" id="about">
+  <div class="ctr">
+    <div class="ab-grid">
+      <div class="ab-txt">
+        <span class="s-eye">ABOUT US</span>
+        <h2 class="s-title">「不自由なくアルバイトを」<br>その願いを、仕事に変える</h2>
+        <p>FreePath は、車いすユーザーが自分らしく働けるクラウドソーシングプラットフォームです。バリアフリーモニターとして、実際の店舗や施設を訪問し、車いす目線のリアルな評価を提供します。</p>
+        <p>企業は現場のユーザー体験を知ることで、より多くの人が使いやすい場所に改善できます。あなたの日常の「使いにくい」という感覚が、社会インフラを変える力になります。</p>
+        <div class="feat-list">
+          <div class="feat">
+            <div class="feat-ic">🔒</div>
+            <div><div class="feat-t">身元が守られる仮面調査</div><div class="feat-d">普通のお客さまとして訪問。特別扱いなしのリアルな体験を評価できます。</div></div>
+          </div>
+          <div class="feat">
+            <div class="feat-ic">📝</div>
+            <div><div class="feat-t">シンプルなレポート提出</div><div class="feat-d">訪問後はアプリ上の評価フォームを記入するだけ。難しい報告書は不要です。</div></div>
+          </div>
+          <div class="feat">
+            <div class="feat-ic">💸</div>
+            <div><div class="feat-t">レポート承認後、最短翌日振込</div><div class="feat-d">飲食・体験にかかった実費は依頼企業が全額負担。持ち出しゼロです。</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="uc-card">
+        <div class="uc-hdr">💼 調査依頼の例</div>
+        <div class="uc-item">
+          <div class="uc-em">🍽️</div>
+          <div><div class="uc-pl">イタリアンレストラン（渋谷）</div><div class="uc-tk">入口スロープ・席間隔・トイレ設備を評価</div><div class="uc-py">¥4,500 ／ 約2時間</div></div>
+        </div>
+        <div class="uc-item">
+          <div class="uc-em">🛒</div>
+          <div><div class="uc-pl">スーパー改装後の動線チェック</div><div class="uc-tk">棚の高さ・通路幅・レジ周辺の使いやすさ</div><div class="uc-py">¥3,500 ／ 約1.5時間</div></div>
+        </div>
+        <div class="uc-item">
+          <div class="uc-em">🏥</div>
+          <div><div class="uc-pl">クリニックのアクセス調査</div><div class="uc-tk">エントランス〜診察室の動線を確認</div><div class="uc-py">¥5,000 ／ 約2時間</div></div>
+        </div>
+        <div class="uc-item">
+          <div class="uc-em">🏛️</div>
+          <div><div class="uc-pl">公共施設のUD評価</div><div class="uc-tk">エレベーター・多目的トイレ・案内表示</div><div class="uc-py">¥6,000 ／ 約3時間</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="animate" id="how">
+  <div class="ctr">
+    <div class="s-hdr">
+      <span class="s-eye">HOW IT WORKS</span>
+      <h2 class="s-title">はじめてでも安心。<br>シンプルなステップで完結</h2>
+      <p class="s-desc">企業からの依頼からモニターが報酬を受け取るまでの流れです。</p>
+    </div>
+    <div class="proc-tabs">
+      <button class="tab on" onclick="switchTab('worker',this)">バイトをしたい方</button>
+      <button class="tab" onclick="switchTab('company',this)">依頼したい企業の方</button>
+    </div>
+    <div id="tab-worker" class="steps">
+      <div class="step"><div class="step-n">1</div><div class="step-ic">📋</div><div class="step-t">無料登録</div><div class="step-d">プロフィールと使用する車いすの情報を登録。3分で完了します。</div></div>
+      <div class="step"><div class="step-n">2</div><div class="step-ic">🔍</div><div class="step-t">仕事を選ぶ</div><div class="step-d">地域・日時・業種で絞り込み、自分に合った仕事を見つけます。</div></div>
+      <div class="step"><div class="step-n">3</div><div class="step-ic">🏪</div><div class="step-t">現地を訪問</div><div class="step-d">仮面調査員として自然に訪問。体験しながら評価を記録。</div></div>
+      <div class="step"><div class="step-n">4</div><div class="step-ic">💸</div><div class="step-t">報酬を受け取る</div><div class="step-d">レポート提出後、最短翌日に報酬振込。</div></div>
+    </div>
+    <div id="tab-company" class="steps" style="display:none">
+      <div class="step"><div class="step-n">1</div><div class="step-ic">📨</div><div class="step-t">調査を依頼</div><div class="step-d">場所・チェック項目・日時を入力して依頼を投稿。最短10分で完了。</div></div>
+      <div class="step"><div class="step-n">2</div><div class="step-ic">🤝</div><div class="step-t">モニターとマッチング</div><div class="step-d">条件に合ったモニターを自動マッチング。最短1日で調整完了。</div></div>
+      <div class="step"><div class="step-n">3</div><div class="step-ic">🔎</div><div class="step-t">現地調査を実施</div><div class="step-d">モニターが自然な形で訪問し、リアルな評価を収集します。</div></div>
+      <div class="step"><div class="step-n">4</div><div class="step-ic">📊</div><div class="step-t">レポートを受け取る</div><div class="step-d">詳細な評価レポートと改善提案を受け取り、施策に活用。</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- JOB BOARD -->
+<section class="jb animate" id="jobs">
+  <div class="ctr">
+    <div class="s-hdr">
+      <span class="s-eye">JOB BOARD</span>
+      <h2 class="s-title">今すぐ受けられる仕事</h2>
+      <p class="s-desc">全国の企業・施設からのバリアフリーモニター依頼。気になる仕事を見つけて応募しましょう。</p>
+    </div>
+    <div class="jb-filters" id="jb-filters">
+      <button class="fchip on" data-cat="all">すべて</button>
+      <button class="fchip" data-cat="食">飲食店</button>
+      <button class="fchip" data-cat="商">商業施設</button>
+      <button class="fchip" data-cat="医">医療・福祉</button>
+      <button class="fchip" data-cat="公">公共施設</button>
+      <button class="fchip" data-cat="宿">ホテル・宿泊</button>
+    </div>
+    <div class="jcards" id="jcards">
+
+      <!-- Card 1 -->
+      <div class="jcard" data-cat="食">
+        <div>
+          <div class="j-badges"><span class="bdg bdg-pr">PR</span><span class="bdg bdg-urg">急募</span></div>
+          <a class="j-title" onclick="openModal('job1')">イタリアンレストランのバリアフリー体験調査（渋谷区）</a>
+          <div class="j-cat">🍽️ 飲食店</div>
+          <div class="j-desc">【依頼内容】開店2ヶ月のイタリアンレストランにて、入口・席・トイレ等のバリアフリー状況を確認いただきたい。実際に食事を楽しみながら評価。【評価ポイント】入口スロープ、テーブル間隔、スタッフの対応、トイレ設備 …</div>
+          <div class="j-foot">
+            <div class="j-user"><div class="j-av">R</div>restaurant_kikaku</div>
+            <div class="j-date">掲載日：2026年06月23日</div>
+          </div>
+          <div class="j-acts">
+            <button class="btn-os" onclick="saveJob(this)">🔖 気になる</button>
+            <button class="btn-ps" onclick="openModal('apply')">この仕事に応募する</button>
+          </div>
+        </div>
+        <div class="j-right">
+          <span class="pay-bdg">時間単価制</span>
+          <div class="pay-amt">4,500<span>円〜</span></div>
+          <div class="j-stats"><div class="ac">応募数 <strong>2人</strong></div><div class="ct">契約状況 0/1人</div></div>
+          <div class="j-dl"><div class="dy">あと 7 日</div><div class="dt">（7月2日まで）</div></div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="jcard" data-cat="商">
+        <div>
+          <div class="j-badges"><span class="bdg bdg-new">NEW</span></div>
+          <a class="j-title" onclick="openModal('job2')">改装後スーパーマーケットの通路・棚アクセス調査（新宿区）</a>
+          <div class="j-cat">🛒 商業施設</div>
+          <div class="j-desc">【依頼内容】先月改装完了したスーパーの棚レイアウト・通路幅・カートの使いやすさを車いす目線で評価してください。【評価ポイント】各売り場への移動しやすさ、届きやすい棚の高さ、レジ付近の混雑時の通行のしやすさ …</div>
+          <div class="j-foot">
+            <div class="j-user"><div class="j-av">S</div>super_kaizen01</div>
+            <div class="j-date">掲載日：2026年06月24日</div>
+          </div>
+          <div class="j-acts">
+            <button class="btn-os" onclick="saveJob(this)">🔖 気になる</button>
+            <button class="btn-ps" onclick="openModal('apply')">この仕事に応募する</button>
+          </div>
+        </div>
+        <div class="j-right">
+          <span class="pay-bdg">時間単価制</span>
+          <div class="pay-amt">3,500<span>円〜</span></div>
+          <div class="j-stats"><div class="ac">応募数 <strong>0人</strong></div><div class="ct">契約状況 0/2人</div></div>
+          <div class="j-dl"><div class="dy">あと 12 日</div><div class="dt">（7月7日まで）</div></div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="jcard" data-cat="医">
+        <div>
+          <div class="j-badges"><span class="bdg bdg-pr">PR</span></div>
+          <a class="j-title" onclick="openModal('job3')">クリニック・病院のアクセス経路・受付対応調査（池袋エリア）</a>
+          <div class="j-cat">🏥 医療・福祉</div>
+          <div class="j-desc">【依頼内容】新規開業クリニックのバリアフリー状況を患者目線で評価。入口から診察室までの経路、受付スタッフの対応、待合室の使いやすさをチェック。【定期依頼】月1〜2回のペースで複数店舗をご依頼予定です …</div>
+          <div class="j-foot">
+            <div class="j-user"><div class="j-av">M</div>medical_facility_jp</div>
+            <div class="j-date">掲載日：2026年06月21日</div>
+          </div>
+          <div class="j-acts">
+            <button class="btn-os" onclick="saveJob(this)">🔖 気になる</button>
+            <button class="btn-ps" onclick="openModal('apply')">この仕事に応募する</button>
+          </div>
+        </div>
+        <div class="j-right">
+          <span class="pay-bdg">時間単価制</span>
+          <div class="pay-amt">5,000<span>円〜</span></div>
+          <div class="j-stats"><div class="ac">応募数 <strong>3人</strong></div><div class="ct">契約状況 1/2人</div></div>
+          <div class="j-dl"><div class="dy">あと 5 日</div><div class="dt">（6月30日まで）</div></div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="jcard" data-cat="宿">
+        <div>
+          <div class="j-badges"><span class="bdg bdg-urg">急募</span></div>
+          <a class="j-title" onclick="openModal('job4')">ホテルのチェックイン〜客室アクセス全体評価（お台場）</a>
+          <div class="j-cat">🏨 ホテル・宿泊</div>
+          <div class="j-desc">【依頼内容】バリアフリールーム導入を機に、宿泊体験全体の評価をお願いしたい。フロント対応・客室設備・共用エリアについて一泊しながら詳細にご評価ください。宿泊費・食事代は全額負担します …</div>
+          <div class="j-foot">
+            <div class="j-user"><div class="j-av">H</div>hotel_concierge_od</div>
+            <div class="j-date">掲載日：2026年06月22日</div>
+          </div>
+          <div class="j-acts">
+            <button class="btn-os" onclick="saveJob(this)">🔖 気になる</button>
+            <button class="btn-ps" onclick="openModal('apply')">この仕事に応募する</button>
+          </div>
+        </div>
+        <div class="j-right">
+          <span class="pay-bdg">固定報酬制</span>
+          <div class="pay-amt">20,000<span>円〜</span></div>
+          <div class="j-stats"><div class="ac">応募数 <strong>5人</strong></div><div class="ct">契約状況 0/1人</div></div>
+          <div class="j-dl"><div class="dy">あと 3 日</div><div class="dt">（6月28日まで）</div></div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="jcard" data-cat="公">
+        <div>
+          <div class="j-badges"><span class="bdg bdg-new">NEW</span></div>
+          <a class="j-title" onclick="openModal('job5')">区立図書館のバリアフリー設備・サービス評価（世田谷区）</a>
+          <div class="j-cat">🏛️ 公共施設</div>
+          <div class="j-desc">【依頼内容】改修工事後の区立図書館のバリアフリー対応を評価。エレベーター・多目的トイレ・書架の使いやすさ・スタッフ対応まで総合的にチェックしてください。複数日程から選択可能です …</div>
+          <div class="j-foot">
+            <div class="j-user"><div class="j-av">S</div>setagaya_lib</div>
+            <div class="j-date">掲載日：2026年06月25日</div>
+          </div>
+          <div class="j-acts">
+            <button class="btn-os" onclick="saveJob(this)">🔖 気になる</button>
+            <button class="btn-ps" onclick="openModal('apply')">この仕事に応募する</button>
+          </div>
+        </div>
+        <div class="j-right">
+          <span class="pay-bdg">時間単価制</span>
+          <div class="pay-amt">4,000<span>円〜</span></div>
+          <div class="j-stats"><div class="ac">応募数 <strong>1人</strong></div><div class="ct">契約状況 0/3人</div></div>
+          <div class="j-dl"><div class="dy">あと 14 日</div><div class="dt">（7月9日まで）</div></div>
+        </div>
+      </div>
+
+    </div>
+    <div class="more">
+      <button class="btn btn-go btn-lg">もっと見る（全38件）</button>
+    </div>
+  </div>
+</section>
+
+<!-- REQUEST -->
+<section class="req animate" id="request">
+  <div class="ctr">
+    <div class="rq-grid">
+      <div class="rq-txt">
+        <span class="s-eye" style="color:var(--a)">FOR COMPANIES</span>
+        <h2>企業・施設の方へ。<br>バリアフリー改善、<br>はじめませんか？</h2>
+        <p>車いすユーザーのリアルな声は、アンケートでは得られません。FreePath のモニターが実際の利用者として現場を訪問し、具体的な改善ポイントをお届けします。</p>
+        <ul class="rq-pts">
+          <li>初回調査キャンペーン実施中（特別価格でご提供）</li>
+          <li>最短3営業日でモニター手配が完了</li>
+          <li>評価レポート＋改善アドバイスをセットでお届け</li>
+          <li>継続依頼は月額プランでさらにお得に</li>
+        </ul>
+        <a href="#" class="btn btn-a btn-lg" onclick="openModal('contact')">まず相談してみる</a>
+      </div>
+      <div class="form-card">
+        <div class="form-ttl">📨 調査依頼フォーム</div>
+        <div class="fg"><label class="fl">施設・店舗名</label><input type="text" class="fi" placeholder="例：さくらレストラン 渋谷店"></div>
+        <div class="fg"><label class="fl">業種</label>
+          <select class="fs">
+            <option>飲食店</option><option>商業施設・スーパー</option><option>医療・クリニック</option>
+            <option>公共施設</option><option>ホテル・宿泊施設</option><option>その他</option>
+          </select>
+        </div>
+        <div class="fg"><label class="fl">調査希望エリア</label><input type="text" class="fi" placeholder="例：東京都渋谷区"></div>
+        <div class="fg"><label class="fl">調査希望日</label><input type="date" class="fi"></div>
+        <div class="fg"><label class="fl">担当者メールアドレス</label><input type="email" class="fi" placeholder="example@company.co.jp"></div>
+        <div class="fg"><label class="fl">ご要望・チェックしてほしい点</label><textarea class="fi" rows="3" placeholder="例：入口の段差が気になる、スタッフの対応も見てほしい" style="resize:vertical"></textarea></div>
+        <button class="sub-btn" onclick="submitForm()">依頼を送る</button>
+        <p class="form-note">担当者より2営業日以内にご連絡いたします</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RECRUIT -->
+<section class="animate" id="recruit">
+  <div class="ctr">
+    <div class="s-hdr">
+      <span class="s-eye">JOIN US</span>
+      <h2 class="s-title">バリアフリーモニターとして<br>はたらいてみませんか？</h2>
+    </div>
+    <div class="rec-grid">
+      <div>
+        <p class="rec-lbl">♿ モニターとして働くメリット</p>
+        <div class="rec-cards">
+          <div class="rec-item"><div class="rec-ic">🗓️</div><div><div class="rec-t">自由なスケジュールで</div><div class="rec-d">週1回でも、月2回でもOK。体調や予定に合わせて仕事を選べます。</div></div></div>
+          <div class="rec-item"><div class="rec-ic">📍</div><div><div class="rec-t">近所から通いやすい仕事</div><div class="rec-d">地域で絞り込み検索が可能。無理のない距離の案件を見つけられます。</div></div></div>
+          <div class="rec-item"><div class="rec-ic">🏅</div><div><div class="rec-t">社会に貢献できる実感</div><div class="rec-d">あなたの評価が実際の改善につながります。変化を実感できる仕事です。</div></div></div>
+          <div class="rec-item"><div class="rec-ic">🍽️</div><div><div class="rec-t">実費は依頼企業が全額負担</div><div class="rec-d">レストランやホテルでの食費・宿泊費は企業負担。持ち出しゼロで楽しく調査。</div></div></div>
+          <div class="rec-item"><div class="rec-ic">🛡️</div><div><div class="rec-t">充実したサポート体制</div><div class="rec-d">初回は担当者が同行可。困ったときのチャットサポートも完備しています。</div></div></div>
+        </div>
+      </div>
+      <div class="cta-box">
+        <h2>あなたの「使いにくい」が、<br>日本を変える。</h2>
+        <p>車いすユーザーの率直な意見は、どんな市場調査よりも価値があります。まずは無料登録だけして、気になる仕事を探してみてください。</p>
+        <div class="rec-stats">
+          <div class="rs"><span class="n">¥3,000〜</span><span class="l">平均時給</span></div>
+          <div class="rs"><span class="n">38件</span><span class="l">現在の求人</span></div>
+          <div class="rs"><span class="n">全国</span><span class="l">対応エリア</span></div>
+        </div>
+        <div class="cta-btns">
+          <button class="btn btn-g btn-lg" style="width:100%;justify-content:center" onclick="openModal('register')">無料でモニター登録する</button>
+          <a href="#jobs" class="btn btn-go btn-lg" style="width:100%;justify-content:center">まず仕事を見てみる</a>
+        </div>
+        <p class="cta-note">登録無料・いつでも退会可能・個人情報は厳重に管理</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-grid">
+    <div class="ft-brand">
+      <div class="ft-logo"><div class="ft-lm">FP</div><span class="ft-ln">FreePath株式会社</span></div>
+      <p>車いすユーザーのリアルな体験を通じて、<br>日本をもっとフリーに。<br><br>※大学講義プロトタイプ用サイトです</p>
+    </div>
+    <div class="ft-col">
+      <h4>サービス</h4>
+      <ul>
+        <li><a href="#jobs">仕事を探す</a></li>
+        <li><a href="#request">仕事を依頼する</a></li>
+        <li><a href="#">料金・プラン</a></li>
+        <li><a href="#">評価レポートとは</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <h4>会社情報</h4>
+      <ul>
+        <li><a href="#about">会社概要</a></li>
+        <li><a href="#">代表メッセージ</a></li>
+        <li><a href="#">メディア掲載</a></li>
+        <li><a href="#recruit">採用情報</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <h4>サポート</h4>
+      <ul>
+        <li><a href="#">よくある質問</a></li>
+        <li><a href="#">お問い合わせ</a></li>
+        <li><a href="#">利用規約</a></li>
+        <li><a href="#">プライバシーポリシー</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="ft-btm">
+    <span>© 2026 FreePath株式会社 All rights reserved.</span>
+    <span>大学講義プロトタイプ</span>
+  </div>
+</footer>
+
+<!-- MODALS -->
+<div class="modal-overlay" id="modal" onclick="closeIfOverlay(event)">
+  <div class="modal" id="modal-inner">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div id="modal-content"></div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script>
+// Nav scroll shadow
+window.addEventListener('scroll',()=>{
+  document.getElementById('nav').style.boxShadow=window.scrollY>40?'0 2px 12px rgba(0,0,0,.07)':'none'
+})
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const t=document.querySelector(a.getAttribute('href'))
+    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'})}
+  })
+})
+
+// Scroll animate
+const obs=new IntersectionObserver(es=>{
+  es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')})
+},{threshold:.1})
+document.querySelectorAll('.animate').forEach(el=>obs.observe(el))
+
+// Tab switch
+function switchTab(tab,btn){
+  document.getElementById('tab-worker').style.display=tab==='worker'?'grid':'none'
+  document.getElementById('tab-company').style.display=tab==='company'?'grid':'none'
+  document.querySelectorAll('.tab').forEach(b=>b.classList.remove('on'))
+  btn.classList.add('on')
+}
+
+// Filter chips
+document.getElementById('jb-filters').addEventListener('click',e=>{
+  const chip=e.target.closest('.fchip')
+  if(!chip)return
+  document.querySelectorAll('.fchip').forEach(c=>c.classList.remove('on'))
+  chip.classList.add('on')
+  const cat=chip.dataset.cat
+  document.querySelectorAll('.jcard').forEach(c=>{
+    c.style.display=(cat==='all'||c.dataset.cat===chip.textContent.trim().slice(0,1))?'grid':'none'
+    // reset using data-cat
+    c.style.display=(cat==='all'||c.dataset.cat===cat)?'grid':'none'
+  })
+})
+
+// Save job
+function saveJob(btn){
+  const saved=btn.dataset.saved
+  if(saved){btn.innerHTML='🔖 気になる';delete btn.dataset.saved}
+  else{btn.innerHTML='✅ 保存済み';btn.dataset.saved='1';showToast('保存しました')}
+}
+
+// Modal system
+const modals={
+  login:{t:'ログイン',sub:'FreePath アカウントにログイン',body:`
+    <div class="fg"><label class="fl">メールアドレス</label><input type="email" class="fi" placeholder="example@email.com"></div>
+    <div class="fg"><label class="fl">パスワード</label><input type="password" class="fi" placeholder="••••••••"></div>
+    <button class="sub-btn" onclick="closeModal();showToast('ログインしました')">ログインする</button>
+    <p class="form-note"><a href="#" style="color:var(--g)">パスワードを忘れた方</a> ／ <a href="#" onclick="openModal('register')" style="color:var(--g)">新規登録はこちら</a></p>
+  `},
+  register:{t:'モニター登録（無料）',sub:'登録して仕事を探しましょう',body:`
+    <div class="fg"><label class="fl">お名前</label><input type="text" class="fi" placeholder="山田 太郎"></div>
+    <div class="fg"><label class="fl">メールアドレス</label><input type="email" class="fi" placeholder="example@email.com"></div>
+    <div class="fg"><label class="fl">居住エリア</label><input type="text" class="fi" placeholder="例：東京都新宿区"></div>
+    <div class="fg"><label class="fl">使用する車いすの種類</label>
+      <select class="fs"><option>手動車いす</option><option>電動車いす</option><option>電動スクーター型</option></select>
+    </div>
+    <div class="fg"><label class="fl">パスワード</label><input type="password" class="fi" placeholder="8文字以上"></div>
+    <button class="sub-btn" onclick="closeModal();showToast('登録が完了しました！仕事を探してみましょう')">無料で登録する</button>
+    <p class="form-note">登録することで<a href="#" style="color:var(--g)">利用規約</a>・<a href="#" style="color:var(--g)">プライバシーポリシー</a>に同意したことになります</p>
+  `},
+  apply:{t:'仕事に応募する',sub:'応募情報を入力してください',body:`
+    <div class="fg"><label class="fl">希望日時</label><input type="date" class="fi"></div>
+    <div class="fg"><label class="fl">自己PR・アピール</label><textarea class="fi" rows="3" placeholder="例：レストランへの外出が好きで、バリアフリーへの意識が高いです"></textarea></div>
+    <div class="fg"><label class="fl">質問・確認事項（任意）</label><textarea class="fi" rows="2" placeholder="例：駐車場はありますか？"></textarea></div>
+    <button class="sub-btn" onclick="closeModal();showToast('応募しました！企業からの連絡をお待ちください')">応募する</button>
+  `},
+  contact:{t:'お問い合わせ',sub:'担当者より2営業日以内にご連絡します',body:`
+    <div class="fg"><label class="fl">会社名・施設名</label><input type="text" class="fi" placeholder="株式会社〇〇"></div>
+    <div class="fg"><label class="fl">担当者名</label><input type="text" class="fi" placeholder="山田 花子"></div>
+    <div class="fg"><label class="fl">メールアドレス</label><input type="email" class="fi" placeholder="example@company.co.jp"></div>
+    <div class="fg"><label class="fl">お問い合わせ内容</label><textarea class="fi" rows="3" placeholder="サービスについて知りたい、見積もりが欲しい、など"></textarea></div>
+    <button class="sub-btn" onclick="closeModal();showToast('送信しました。担当者より連絡いたします')">送信する</button>
+  `},
+  job1:{t:'イタリアンレストランのバリアフリー体験調査',sub:'渋谷区 ／ 飲食店 ／ 時間単価制',body:`
+    <div style="background:var(--sf);border-radius:10px;padding:1rem;margin-bottom:1rem;font-size:.85rem;color:var(--tl)">
+      <p style="margin-bottom:.5rem"><strong style="color:var(--dk)">依頼内容</strong></p>
+      <p style="margin-bottom:.75rem">開店2ヶ月のイタリアンレストランにて、入口・席・トイレ等のバリアフリー状況を確認いただきたい。実際に食事を楽しみながら評価してください。</p>
+      <p style="margin-bottom:.25rem"><strong style="color:var(--dk)">評価ポイント</strong></p>
+      <p>・入口スロープの有無と使いやすさ<br>・テーブル間隔と車いすでのアクセス<br>・スタッフの対応・配慮<br>・トイレ設備の使いやすさ</p>
+    </div>
+    <div style="display:flex;gap:1rem;margin-bottom:1rem;flex-wrap:wrap">
+      <div style="flex:1;min-width:120px;background:var(--sf);border-radius:8px;padding:.75rem;text-align:center">
+        <div style="font-size:.7rem;color:var(--tl)">報酬</div>
+        <div style="font-size:1.1rem;font-weight:900;color:var(--rd)">¥4,500〜</div>
+      </div>
+      <div style="flex:1;min-width:120px;background:var(--sf);border-radius:8px;padding:.75rem;text-align:center">
+        <div style="font-size:.7rem;color:var(--tl)">所要時間</div>
+        <div style="font-size:1.1rem;font-weight:700;color:var(--dk)">約2時間</div>
+      </div>
+      <div style="flex:1;min-width:120px;background:var(--sf);border-radius:8px;padding:.75rem;text-align:center">
+        <div style="font-size:.7rem;color:var(--tl)">締切</div>
+        <div style="font-size:1.1rem;font-weight:700;color:var(--rd)">あと7日</div>
+      </div>
+    </div>
+    <button class="sub-btn" onclick="closeModal();openModal('apply')">この仕事に応募する</button>
+  `}
+}
+
+function openModal(id){
+  const m=modals[id]||{t:'詳細',sub:'',body:'<p>準備中です</p>'}
+  document.getElementById('modal-content').innerHTML=`
+    <p class="modal-t">${m.t}</p>
+    <p class="modal-sub">${m.sub}</p>
+    <div class="modal-body">${m.body}</div>
+  `
+  document.getElementById('modal').classList.add('open')
+}
+
+function closeModal(){document.getElementById('modal').classList.remove('open')}
+function closeIfOverlay(e){if(e.target===document.getElementById('modal'))closeModal()}
+
+// Toast
+function showToast(msg){
+  const t=document.getElementById('toast')
+  t.textContent=msg;t.classList.add('show')
+  setTimeout(()=>t.classList.remove('show'),3000)
+}
+
+function submitForm(){showToast('依頼を受け付けました。担当者よりご連絡します')}
+
+// Filter data-cat fix: map chip text to data-cat values
+const catMap={'飲食店':'食','商業施設':'商','医療・福祉':'医','公共施設':'公','ホテル・宿泊':'宿'}
+document.getElementById('jb-filters').addEventListener('click',e=>{
+  const chip=e.target.closest('.fchip')
+  if(!chip)return
+  document.querySelectorAll('.fchip').forEach(c=>c.classList.remove('on'))
+  chip.classList.add('on')
+  const cat=chip.dataset.cat
+  document.querySelectorAll('.jcard').forEach(c=>{
+    if(cat==='all'||c.dataset.cat===cat)c.style.display='grid'
+    else c.style.display='none'
+  })
+},true)
+</script>
+</body>
+</html>
